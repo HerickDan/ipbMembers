@@ -1,6 +1,7 @@
 package com.ipbMembers.ipbMembers.commons.dto
 
-data class CreteMemberDto (
+data class ViewMemberDto (
+    val userId: String,
     val firstName: String,
     val lastName: String,
     val age: Int
