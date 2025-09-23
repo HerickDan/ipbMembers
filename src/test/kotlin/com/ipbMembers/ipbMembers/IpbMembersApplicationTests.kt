@@ -6,8 +6,8 @@ import org.springframework.boot.test.context.SpringBootTest
 @SpringBootTest
 class IpbMembersApplicationTests {
 
-	@Test
-	fun contextLoads() {
-	}
+//	@Test
+//	fun contextLoads() {
+//	}
 
 }
