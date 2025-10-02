@@ -1,0 +1,1 @@
+ALTER TABLE members ADD COLUMN hierarchical_level VARCHAR(255) NOT NULL

@@ -1,0 +1,1 @@
+ALTER TABLE family ADD COLUMN family_name VARCHAR(255) NOT NULL
