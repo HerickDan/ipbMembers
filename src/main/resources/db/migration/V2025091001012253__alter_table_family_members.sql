@@ -1,0 +1,1 @@
+ALTER TABLE family_members ADD COLUMN created_by VARCHAR(255) NOT NULL;

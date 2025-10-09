@@ -13,4 +13,8 @@ class FamilyService(
     fun createFamily(dto: CreateFamilyDto){
         familyRepository.save(FamilyEntity.fromDto(dto))
     }
+
+    fun addMembers() {
+
+    }
 }
