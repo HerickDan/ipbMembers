@@ -1,6 +1,6 @@
 package com.ipbMembers.ipbMembers.api.controllers
 
-import com.ipbMembers.ipbMembers.api.representation.CreateFamilyRequest
+import com.ipbMembers.ipbMembers.api.representation.request.CreateFamilyRequest
 import com.ipbMembers.ipbMembers.services.FamilyService
 import org.springframework.web.bind.annotation.PatchMapping
 import org.springframework.web.bind.annotation.PostMapping

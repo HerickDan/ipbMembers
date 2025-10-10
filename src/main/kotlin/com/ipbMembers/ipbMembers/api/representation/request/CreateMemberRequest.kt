@@ -1,4 +1,4 @@
-package com.ipbMembers.ipbMembers.api.representation
+package com.ipbMembers.ipbMembers.api.representation.request
 
 import com.ipbMembers.ipbMembers.commons.dto.CreteMemberDto
 import com.ipbMembers.ipbMembers.commons.enum.HierarchLevel

@@ -1,11 +1,11 @@
-package com.ipbMembers.ipbMembers.api
+package com.ipbMembers.ipbMembers.api.representation.repository
 
 import com.ipbMembers.ipbMembers.api.entity.MemberEntity
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.data.jpa.repository.JpaRepository
 
-interface MemberRepository: JpaRepository<MemberEntity, Long> {
+interface IMemberRepository: JpaRepository<MemberEntity, Long> {
     fun findByUserApiId(memberId: String): MemberEntity
     override fun findAll(page: Pageable): Page<MemberEntity>
 }

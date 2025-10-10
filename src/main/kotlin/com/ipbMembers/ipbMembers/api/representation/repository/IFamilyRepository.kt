@@ -1,4 +1,4 @@
-package com.ipbMembers.ipbMembers.api.representation
+package com.ipbMembers.ipbMembers.api.representation.repository
 
 import com.ipbMembers.ipbMembers.api.entity.FamilyEntity
 import org.springframework.data.jpa.repository.JpaRepository
