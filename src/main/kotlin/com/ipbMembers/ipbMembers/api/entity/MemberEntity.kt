@@ -23,8 +23,8 @@ data class MemberEntity(
     val age: Int,
     @Column(name="hierarchical_level")
     @Enumerated(EnumType.STRING)
-    val hierarchicalLevel: HierarchLevel,
-    val userApiId: String? = UUID.randomUUID().toString(),
+    val hierarchicalLevel: HierarchLevel ? = HierarchLevel.COMMON_MEMBER,
+    val apiId: String? = UUID.randomUUID().toString(),
 ) {
     companion object {
         fun fromDto(dto: CreteMemberDto): MemberEntity =
