@@ -1,0 +1,1 @@
+ALTER TABLE members DROP COLUMN user_api_id
