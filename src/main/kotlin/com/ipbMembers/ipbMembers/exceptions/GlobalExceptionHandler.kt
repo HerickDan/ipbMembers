@@ -17,7 +17,7 @@
            ex: NotFoundException,
         ): ResponseEntity<ErrorResponse>{
              val error = ErrorResponse(
-                 ex.message!!,
+                 ex.errorMessage.message,
                  HttpStatus.NOT_FOUND,
              )
             return ResponseEntity<ErrorResponse>(error, HttpStatus.NOT_FOUND)

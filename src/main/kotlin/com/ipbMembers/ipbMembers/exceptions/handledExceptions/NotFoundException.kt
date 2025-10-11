@@ -1,3 +1,5 @@
 package com.ipbMembers.ipbMembers.exceptions.handledExceptions
 
-class NotFoundException(message: String): RuntimeException(message)
+import com.ipbMembers.ipbMembers.commons.enum.ErrorMessage
+
+class NotFoundException( val errorMessage: ErrorMessage): RuntimeException()
