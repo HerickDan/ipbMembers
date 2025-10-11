@@ -18,9 +18,9 @@ class MemberService(
     }
 
     fun getMember(memberId: String): ViewMemberDto {
-        val member = IMemberRepository.findByUserApiId(memberId)
+        val member = IMemberRepository.findByApiId(memberId)
         return ViewMemberDto(
-            userId = member.userApiId!!,
+            userId = member.apiId!!,
             firstName = member.firstName,
             lastName = member.lastName,
             age = member.age
@@ -28,7 +28,7 @@ class MemberService(
     }
 
     fun updateMember(memberId: String, dto: UpdateMember) {
-        val member = IMemberRepository.findByUserApiId(memberId)
+        val member = IMemberRepository.findByApiId(memberId)
         val updatedMember = member.copy(
             firstName = dto.firstName ?: member.firstName,
             lastName = dto.lastName ?: member.lastName,
@@ -38,7 +38,7 @@ class MemberService(
     }
 
     fun delete(memberId: String) {
-        val member = IMemberRepository.findByUserApiId(memberId)
+        val member = IMemberRepository.findByApiId(memberId)
         IMemberRepository.delete(member)
     }
 
@@ -46,7 +46,7 @@ class MemberService(
         val members = IMemberRepository.findAll(page)
         return members.map { member ->
             ViewMemberDto(
-                userId = member.userApiId!!,
+                userId = member.apiId!!,
                 firstName = member.firstName,
                 lastName = member.lastName,
                 age = member.age

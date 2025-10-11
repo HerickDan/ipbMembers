@@ -1,0 +1,1 @@
+ALTER TABLE members RENAME COLUMN user_api_id TO api_id;

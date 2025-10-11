@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface IFamilyRepository: JpaRepository<FamilyEntity, Int>{
+    fun findByApiId(apiId: String): FamilyEntity?
 }

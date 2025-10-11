@@ -1,0 +1,1 @@
+ALTER TABLE family_members RENAME COLUMN app_id to api_id;
