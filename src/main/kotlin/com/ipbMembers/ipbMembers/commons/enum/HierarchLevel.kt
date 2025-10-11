@@ -4,5 +4,6 @@ enum class HierarchLevel {
     DADDY,
     SON,
     MOTHER,
-    DAUGHTER
+    DAUGHTER,
+    COMMON_MEMBER
 }

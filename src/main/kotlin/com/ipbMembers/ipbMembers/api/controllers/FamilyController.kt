@@ -1,6 +1,8 @@
 package com.ipbMembers.ipbMembers.api.controllers
 
+import com.ipbMembers.ipbMembers.api.representation.request.AddMemberRequest
 import com.ipbMembers.ipbMembers.api.representation.request.CreateFamilyRequest
+import com.ipbMembers.ipbMembers.commons.dto.AddMemberDto
 import com.ipbMembers.ipbMembers.services.FamilyService
 import org.springframework.web.bind.annotation.PatchMapping
 import org.springframework.web.bind.annotation.PostMapping
@@ -23,7 +25,9 @@ class FamilyController(
     }
 
     @PatchMapping
-    fun addMembers(){
-        familyService.addMembers()
+    fun addMembers(
+        @RequestBody req: AddMemberRequest
+    ){
+        familyService.addMembers(req.toDto())
     }
 }
