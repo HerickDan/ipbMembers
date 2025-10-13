@@ -4,6 +4,7 @@ import com.ipbMembers.ipbMembers.api.representation.request.CreateMemberRequest
 import com.ipbMembers.ipbMembers.commons.dto.UpdateMember
 import com.ipbMembers.ipbMembers.commons.dto.ViewMemberDto
 import com.ipbMembers.ipbMembers.services.MemberService
+import com.ipbMembers.ipbMembers.services.RegisterMemberService
 import org.springdoc.core.annotations.ParameterObject
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
@@ -22,12 +23,13 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/member")
 class MemberController(
     private val memberService: MemberService,
+    private val registerMemberService: RegisterMemberService
 ) {
     @PostMapping()
     fun createMember(
         @RequestBody req: CreateMemberRequest
     ) {
-        memberService.createMember(req.toDto())
+        registerMemberService.createMember(req.toDto())
     }
 
     @GetMapping

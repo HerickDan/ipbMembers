@@ -15,9 +15,7 @@ import org.springframework.stereotype.Service
 class MemberService(
     private val IMemberRepository: IMemberRepository,
 ) {
-    fun createMember(dto: CreteMemberDto) {
-        IMemberRepository.save(MemberEntity.fromDto(dto))
-    }
+
 
     fun getMember(memberId: String): ViewMemberDto {
         val member = IMemberRepository.findByApiId(memberId) ?: throw NotFoundException(

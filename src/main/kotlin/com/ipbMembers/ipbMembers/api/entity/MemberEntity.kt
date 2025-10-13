@@ -18,13 +18,21 @@ data class MemberEntity(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
+    @Column(name="first_name")
     val firstName: String,
+    @Column(name="last_name")
     val lastName: String,
+    @Column(name="age")
     val age: Int,
     @Column(name="hierarchical_level")
     @Enumerated(EnumType.STRING)
     val hierarchicalLevel: HierarchLevel ? = HierarchLevel.COMMON_MEMBER,
+    @Column(name="api_id")
     val apiId: String? = UUID.randomUUID().toString(),
+    @Column(name="email")
+    val email: String,
+    @Column(name="password")
+    val password: String
 ) {
     companion object {
         fun fromDto(dto: CreteMemberDto): MemberEntity =
@@ -33,6 +41,8 @@ data class MemberEntity(
                 lastName = dto.lastName,
                 age = dto.age,
                 hierarchicalLevel = dto.hierarchLevel,
+                email = dto.email,
+                password = dto.password,
             )
     }
 }
