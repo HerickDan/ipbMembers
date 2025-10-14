@@ -1,5 +1,6 @@
     package com.ipbMembers.ipbMembers.exceptions
 
+    import com.ipbMembers.ipbMembers.exceptions.handledExceptions.AlreadyCreatedException
     import com.ipbMembers.ipbMembers.exceptions.handledExceptions.NotFoundException
     import org.springframework.http.HttpStatus
     import org.springframework.http.ResponseEntity
@@ -22,4 +23,15 @@
              )
             return ResponseEntity<ErrorResponse>(error, HttpStatus.NOT_FOUND)
          }
+
+        @ExceptionHandler(AlreadyCreatedException::class)
+        fun handleAlreadyCreatedEntity(
+            ex: AlreadyCreatedException
+        ): ResponseEntity<ErrorResponse>{
+            val error = ErrorResponse(
+                ex.errorMessage.message,
+                HttpStatus.CONFLICT
+            )
+            return ResponseEntity<ErrorResponse>(error, HttpStatus.CONFLICT )
+        }
     }
