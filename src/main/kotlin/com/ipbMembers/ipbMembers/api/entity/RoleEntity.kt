@@ -16,5 +16,6 @@ data class RoleEntity(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Int? = null,
     val apiId: String? = UUID.randomUUID().toString(),
+    val roleName: String,
     val createdAt: ZonedDateTime = ZonedDateTime.now()
 )
