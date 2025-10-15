@@ -32,8 +32,6 @@ class TokenService(
         expiration: Date,
         additionalClaims: Map<String, Any>
     ): String {
-
-
         return builder()
             .claims()
             .add(additionalClaims).subject(subject)
