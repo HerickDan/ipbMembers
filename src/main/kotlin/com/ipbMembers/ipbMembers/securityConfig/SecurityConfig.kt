@@ -1,5 +1,6 @@
 package com.ipbMembers.ipbMembers.securityConfig
 
+import org.springframework.boot.autoconfigure.security.oauth2.server.servlet.OAuth2AuthorizationServerJwtAutoConfiguration
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.config.Customizer
@@ -14,8 +15,9 @@ import org.springframework.security.web.SecurityFilterChain
 class SecurityConfig {
 
     @Bean
-    fun securityFilter(http: HttpSecurity): SecurityFilterChain {
-        http.csrf(Customizer.withDefaults()).authorizeHttpRequests { it.anyRequest().authenticated() }
+    fun securityFilter(
+        http: HttpSecurity): SecurityFilterChain {
+        http.csrf { it.disable() }.authorizeHttpRequests { it.anyRequest().permitAll() }
         return http.build()
     }
 

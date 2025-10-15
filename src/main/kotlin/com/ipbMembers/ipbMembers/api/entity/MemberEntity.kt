@@ -9,6 +9,7 @@ import jakarta.persistence.Enumerated
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
+import jakarta.persistence.JoinColumn
 import jakarta.persistence.Table
 import java.util.UUID
 
@@ -32,7 +33,10 @@ data class MemberEntity(
     @Column(name="email")
     val email: String,
     @Column(name="password")
-    val password: String
+    val password: String,
+    @JoinColumn(name="id")
+    @Column(name="role_id")
+    val roleId: Int ? = null,
 ) {
     companion object {
         fun fromDto(dto: CreteMemberDto): MemberEntity =
