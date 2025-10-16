@@ -2,6 +2,7 @@ package com.ipbMembers.ipbMembers.services
 
 import com.ipbMembers.ipbMembers.api.entity.MemberEntity
 import com.ipbMembers.ipbMembers.api.representation.repository.IMemberRepository
+import com.ipbMembers.ipbMembers.api.representation.repository.IRoleRepository
 import com.ipbMembers.ipbMembers.commons.dto.CreteMemberDto
 import com.ipbMembers.ipbMembers.commons.enum.ErrorMessage
 import com.ipbMembers.ipbMembers.exceptions.handledExceptions.AlreadyCreatedException
@@ -11,7 +12,8 @@ import org.springframework.stereotype.Service
 @Service
 class RegisterMemberService(
     private val memberRepository: IMemberRepository,
-    private val securityConfig: SecurityConfig
+    private val securityConfig: SecurityConfig,
+    private val roleRepository: IRoleRepository
 ) {
     fun createMember(dto: CreteMemberDto) {
         val passwordEncoder = securityConfig.passwordEncoder()
@@ -27,7 +29,8 @@ class RegisterMemberService(
                     age = dto.age,
                     email = dto.email,
                     password = passwordEncoder.encode(dto.password),
-                    hierarchLevel = dto.hierarchLevel
+                    hierarchLevel = dto.hierarchLevel,
+
                 )
             )
         )
