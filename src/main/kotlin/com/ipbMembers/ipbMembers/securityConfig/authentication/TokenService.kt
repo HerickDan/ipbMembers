@@ -4,10 +4,6 @@ import io.jsonwebtoken.Claims
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.Jwts.*
 import org.springframework.stereotype.Service
-import java.time.LocalDate
-import java.time.LocalDateTime
-import java.time.ZoneId;
-import java.time.ZonedDateTime
 import java.util.Base64
 import java.util.Date
 import javax.crypto.spec.SecretKeySpec
@@ -30,14 +26,16 @@ class TokenService(
     fun generateToken(
         subject: String,
         expiration: Date,
-        additionalClaims: Map<String, Any>
+        additionalClaims: Map<String, Any>? = emptyMap()
     ): String {
         return builder()
             .claims()
             .add(additionalClaims).subject(subject)
             .issuedAt(
                  Date(System.currentTimeMillis())
-            ).and().signWith(signingKey).compact()
+            ).and()
+            .expiration(expiration)
+            .signWith(signingKey).compact()
     }
 
     fun extractAllClaims(token: String): Claims {
