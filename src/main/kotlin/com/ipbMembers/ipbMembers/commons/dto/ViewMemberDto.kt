@@ -4,5 +4,6 @@ data class ViewMemberDto (
     val userId: String,
     val firstName: String,
     val lastName: String,
-    val age: Int
+    val age: Int,
+    val userName: String
 )

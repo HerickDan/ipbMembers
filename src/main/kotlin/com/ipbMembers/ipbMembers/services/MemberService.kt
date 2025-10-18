@@ -25,7 +25,8 @@ class MemberService(
             userId = member.apiId!!,
             firstName = member.firstName,
             lastName = member.lastName,
-            age = member.age
+            age = member.age,
+            userName = member.userName
         )
     }
 
@@ -55,7 +56,8 @@ class MemberService(
                 userId = member.apiId!!,
                 firstName = member.firstName,
                 lastName = member.lastName,
-                age = member.age
+                age = member.age,
+                userName = member.userName
             )
         }
     }

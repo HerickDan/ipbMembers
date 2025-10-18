@@ -30,7 +30,7 @@ class RegisterMemberService(
                     email = dto.email,
                     password = passwordEncoder.encode(dto.password),
                     hierarchLevel = dto.hierarchLevel,
-
+                    userName = dto.userName
                 )
             )
         )

@@ -8,5 +8,6 @@ data class CreteMemberDto(
     val age: Int,
     val email: String,
     val password: String,
+    val userName: String,
     val hierarchLevel: HierarchLevel?
 )

@@ -9,7 +9,8 @@ data class CreateMemberRequest(
     val age: Int,
     val email: String,
     val password: String,
-    val hierarchLevel: HierarchLevel ? = HierarchLevel.COMMON_MEMBER
+    val hierarchLevel: HierarchLevel ? = HierarchLevel.COMMON_MEMBER,
+    val userName: String
 ) {
     fun toDto(): CreteMemberDto =
         CreteMemberDto(
@@ -18,6 +19,7 @@ data class CreateMemberRequest(
             age = this.age,
             hierarchLevel = this.hierarchLevel,
             email = this.email,
-            password = this.password
+            password = this.password,
+            userName = this.userName
         )
 }

@@ -7,8 +7,10 @@ import org.springframework.security.authentication.AuthenticationServiceExceptio
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
+import org.springframework.stereotype.Service
 import java.util.Date
 
+@Service
 class AuthenticationService(
     private val authManager: AuthenticationManager,
     private val userDetailsService: UserDetailsService,

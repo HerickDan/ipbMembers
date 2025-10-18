@@ -37,6 +37,8 @@ data class MemberEntity(
     @JoinColumn(name="id")
     @Column(name="role_id")
     val roleId: Int ? = null,
+    @Column(name="user_name")
+    val userName: String
 ) {
     companion object {
         fun fromDto(dto: CreteMemberDto): MemberEntity =
@@ -47,6 +49,7 @@ data class MemberEntity(
                 hierarchicalLevel = dto.hierarchLevel,
                 email = dto.email,
                 password = dto.password,
+                userName = dto.userName
             )
     }
 }
