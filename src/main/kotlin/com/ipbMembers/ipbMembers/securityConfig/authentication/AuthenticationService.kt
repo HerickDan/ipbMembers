@@ -54,8 +54,8 @@ class AuthenticationService(
         )
     }
 
-    private fun createRefreshToken(user: UserDetails) {
-        tokenService.generateToken(
+    private fun createRefreshToken(user: UserDetails): String {
+       return  tokenService.generateToken(
             subject = user.username,
             expiration = Date(System.currentTimeMillis() + 15 * 60 * 1000)
         )

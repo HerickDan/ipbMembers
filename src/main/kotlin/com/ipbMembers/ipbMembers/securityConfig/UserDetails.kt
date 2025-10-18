@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.User
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
 
+
 class UserDetails (
     private val memberRepository: IMemberRepository,
     private val roleRepository: IRoleRepository
