@@ -52,14 +52,16 @@ class AuthenticationService(
     private fun createAccessToken(user: UserDetails): String {
         return tokenService.generateToken(
             subject = user.username,
-            expiration = Date(System.currentTimeMillis() + 15 * 60 * 1000)
+            expiration = Date(System.currentTimeMillis() + 15 * 60 * 1000),
+            user = user
         )
     }
 
     private fun createRefreshToken(user: UserDetails): String {
        return  tokenService.generateToken(
             subject = user.username,
-            expiration = Date(System.currentTimeMillis() + 15 * 60 * 1000)
+            expiration = Date(System.currentTimeMillis() + 15 * 60 * 1000),
+            user = user
         )
     }
 

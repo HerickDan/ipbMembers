@@ -9,5 +9,6 @@ import java.lang.reflect.Member
 interface IMemberRepository: JpaRepository<MemberEntity, Long> {
     fun findByApiId(memberId: String): MemberEntity?
     fun findByEmail(email: String): MemberEntity?
+    fun findByUserName(userName: String): MemberEntity?
     override fun findAll(page: Pageable): Page<MemberEntity>
 }

@@ -20,6 +20,12 @@ class AuthFilter(
         res: HttpServletResponse,
         filterChain: FilterChain
     ) {
+        val path = req.servletPath
+        if (path.startsWith("/auth")) {
+            filterChain.doFilter(req, res)
+            return
+        }
+
         val authorizationHeader: String? = req.getHeader("Authorization")
         if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
             try {
@@ -45,7 +51,7 @@ class AuthFilter(
                     """.trimIndent()
                 )
             }
-            filterChain.doFilter(req, res)
         }
+            filterChain.doFilter(req, res)
     }
 }

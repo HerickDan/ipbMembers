@@ -10,13 +10,13 @@ import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
 
 
-class UserDetails (
+class CustomUserDetails (
     private val memberRepository: IMemberRepository,
     private val roleRepository: IRoleRepository
 ): UserDetailsService {
  override fun loadUserByUsername(memberId: String): UserDetails {
-        val member = memberRepository.findByApiId(memberId) ?: throw NotFoundException(
-            ErrorMessage.FAMILY_NOT_FOUND
+        val member = memberRepository.findByUserName(memberId) ?: throw NotFoundException(
+            ErrorMessage.MEMBER_NOT_FOUND
         )
         val role = roleRepository.findByIdOrNull(member.roleId!!)
         return User.builder()

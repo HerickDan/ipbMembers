@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
-
 @RestController
 @RequestMapping("/auth")
 class AuthController(
     private val authService: AuthenticationService
 ) {
-    @PostMapping
+
+    @PostMapping("/login")
     fun authenticate(
         @RequestBody authRequest: AuthRequest
     ): AuthResponse = authService.authentication(authRequest)
